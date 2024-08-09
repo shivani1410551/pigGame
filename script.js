@@ -50,21 +50,20 @@ rollDice.addEventListener("click", function (e) {
 // hold event
 holdBtn.addEventListener("click", function () {
   // add currentscore to the totalscore variables
-  if (playing) {
-    scores[activePlayer] += currentScore;
-    document.querySelector(`.totalScore${activePlayer}`).textContent =
-      scores[activePlayer];
+  if (!playing) return;
+  scores[activePlayer] += currentScore;
+  document.querySelector(`.totalScore${activePlayer}`).textContent =
+    scores[activePlayer];
 
-    // check scores is >=100
-    if (scores[activePlayer] >= 100) {
-      alert(`Player${activePlayer + 1} wins!`);
-      playing = false;
-      dice.textContent = 0;
-      activePlayer = activePlayer === 1 ? 0 : 1;
-    } else {
-      init();
-    }
-    // switch to player next
+  // check scores is >=100
+  if (scores[activePlayer] >= 100) {
+    alert(`Player${activePlayer + 1} wins!`);
+    playing = false;
+    dice.textContent = 0;
+    activePlayer = activePlayer === 1 ? 0 : 1;
+  } else {
     init();
   }
+  // switch to player next
+  init();
 });
