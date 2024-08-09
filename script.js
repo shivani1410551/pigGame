@@ -35,16 +35,15 @@ function init() {
 }
 // roll dice or generate random number
 rollDice.addEventListener("click", function (e) {
-  if (playing) {
-    const random = Math.floor(Math.random() * 6) + 1;
-    dice.textContent = random;
-    if (random !== 1) {
-      currentScore += random;
-      document.querySelector(`.currScore${activePlayer}`).textContent =
-        currentScore;
-    } else {
-      init();
-    }
+  if (!playing) return;
+  const random = Math.floor(Math.random() * 6) + 1;
+  dice.textContent = random;
+  if (random !== 1) {
+    currentScore += random;
+    document.querySelector(`.currScore${activePlayer}`).textContent =
+      currentScore;
+  } else {
+    init();
   }
 });
 
