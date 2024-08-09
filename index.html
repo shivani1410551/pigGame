@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Pig game</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body class="bg-rose-200 flex h-screen items-center justify-center">
+    <div class="players grid grid-cols-2 relative">
+      <div
+        class="player0 bg-rose-300 w-[400px] h-[600px] p-6 flex flex-col justify-between items-center"
+      >
+        <p class="font-bold text-4xl uppercase">Player 1</p>
+        <span class="bold text-3xl totalScore0">0</span>
+        <div class="score bg-rose-600 text-rose-100 rounded p-4">
+          <p class="uppercase">current</p>
+          <div class="currScore0 text-center">0</div>
+        </div>
+      </div>
+      <div
+        class="player1 bg-rose-400 w-[400px] h-[600px] p-6 flex flex-col justify-between items-center"
+      >
+        <p class="font-bold text-4xl uppercase">Player 2</p>
+        <span class="bold text-3xl totalScore1">0</span>
+        <div class="score bg-rose-600 text-rose-100 rounded p-4">
+          <p class="uppercase">current</p>
+          <div class="currScore1 text-center">0</div>
+        </div>
+      </div>
+
+      <button
+        class="newGame uppercase rounded-lg bg-white p-4 absolute right-64 top-8"
+      >
+        new game
+      </button>
+      <span
+        class="dice absolute right-[18rem] bottom-60 bg-white py-4 px-6 rounded"
+        >0</span
+      >
+      <button
+        class="rollDice uppercase rounded-lg bg-white p-4 absolute right-[16rem] bottom-40"
+      >
+        roll dice
+      </button>
+      <button
+        class="hold uppercase rounded-lg bg-white p-4 absolute right-64 bottom-20"
+      >
+        hold
+      </button>
+    </div>
+  </body>
+</html>
